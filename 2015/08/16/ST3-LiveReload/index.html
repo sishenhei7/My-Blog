@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://7xqoa3.com1.z0.glb.clouddn.com/css%2Fanimate.css">
+  <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+  <style>
+    .pace .pace-progress {
+      background: #1E92FB;
+      height: 3px;
+    }
+    .pace .pace-progress-inner {
+      box-shadow: 0 0 10px #1E92FB, 0 0 5px #1E92FB;
+    }
+    .pace .pace-activity {
+      border-top-color: #1E92FB;
+    border-left-color: #1E92FB;
+    }
+  </style>
+  
+  <title>Sublime Text3 无法使用LiveReload插件的解决方法 | Waydrow&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="问题更新最近电脑系统换为ubuntu后，发现原来这个问题的解决办法和windows中略有不同，及时记录下来
+前言以前一直在用sublime text2, 有一款插件感觉非常好用，就是LiveReload，在sublime中写完代码，按下ctrl+s保存后，浏览器自动刷新页面，可直接查看效果，而不用切换到浏览器中再按F5刷新。这对于做web开发的真心方便，最爽的莫过于双屏开发，这边写完代码，保存，那">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime Text3 无法使用LiveReload插件的解决方法">
+<meta property="og:url" content="http://blog.waydrow.com/2015/08/16/ST3-LiveReload/index.html">
+<meta property="og:site_name" content="Waydrow's blog">
+<meta property="og:description" content="问题更新最近电脑系统换为ubuntu后，发现原来这个问题的解决办法和windows中略有不同，及时记录下来
+前言以前一直在用sublime text2, 有一款插件感觉非常好用，就是LiveReload，在sublime中写完代码，按下ctrl+s保存后，浏览器自动刷新页面，可直接查看效果，而不用切换到浏览器中再按F5刷新。这对于做web开发的真心方便，最爽的莫过于双屏开发，这边写完代码，保存，那">
+<meta property="og:image" content="http://blog.waydrow.com/images/20150816/livereload-chrome.jpg">
+<meta property="og:image" content="http://blog.waydrow.com/images/20150816/livereload-chrome2.jpg">
+<meta property="og:image" content="http://blog.waydrow.com/images/20150816/sublime-livereload.jpg">
+<meta property="og:image" content="http://blog.waydrow.com/images/20150816/sublime-livereload2.jpg">
+<meta property="og:updated_time" content="2016-03-28T06:52:49.926Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime Text3 无法使用LiveReload插件的解决方法">
+<meta name="twitter:description" content="问题更新最近电脑系统换为ubuntu后，发现原来这个问题的解决办法和windows中略有不同，及时记录下来
+前言以前一直在用sublime text2, 有一款插件感觉非常好用，就是LiveReload，在sublime中写完代码，按下ctrl+s保存后，浏览器自动刷新页面，可直接查看效果，而不用切换到浏览器中再按F5刷新。这对于做web开发的真心方便，最爽的莫过于双屏开发，这边写完代码，保存，那">
+<meta name="twitter:image" content="http://blog.waydrow.com/images/20150816/livereload-chrome.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Waydrow&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic" id="avatar-photo">
+			
+			<img lazy-src="/images/avatar.png" class="js-avatar">
+			
+		</a>
+		<script>
+			$("#avatar-photo").hover(function(){
+				$(this).addClass("animated rubberBand");
+			},function(){
+				$(this).removeClass("animated rubberBand");
+			});
+		</script>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Waydrow</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不知名的程序猿+Web前端技术宅</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">文章</a></li>
+				        
+							<li><a href="/tags">分类</a></li>
+				        
+							<li><a href="/categories/杂谈">杂谈</a></li>
+				        
+							<li><a href="/about">关于</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="facebook" target="_blank" href="https://www.facebook.com/waydrow" title="facebook">facebook</a>
+					        
+								<a class="github" target="_blank" href="https://github.com/Waydrow" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto:waydrow@163.com" title="mail">mail</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Activity/" style="font-size: 10px;">Activity</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Blog/" style="font-size: 15px;">Blog</a> <a href="/tags/Boostrap/" style="font-size: 10px;">Boostrap</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CheckBox/" style="font-size: 10px;">CheckBox</a> <a href="/tags/DatePickerDialog/" style="font-size: 10px;">DatePickerDialog</a> <a href="/tags/Hexo/" style="font-size: 17.5px;">Hexo</a> <a href="/tags/Http/" style="font-size: 10px;">Http</a> <a href="/tags/JsonObjectRequest/" style="font-size: 10px;">JsonObjectRequest</a> <a href="/tags/ListView/" style="font-size: 10px;">ListView</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/RadioButton/" style="font-size: 10px;">RadioButton</a> <a href="/tags/RadioGroup/" style="font-size: 10px;">RadioGroup</a> <a href="/tags/Spinner/" style="font-size: 10px;">Spinner</a> <a href="/tags/SwipeRefreshLayout/" style="font-size: 10px;">SwipeRefreshLayout</a> <a href="/tags/TimePickerDialog/" style="font-size: 10px;">TimePickerDialog</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WampServer/" style="font-size: 10px;">WampServer</a> <a href="/tags/Web前端/" style="font-size: 12.5px;">Web前端</a> <a href="/tags/coding/" style="font-size: 10px;">coding</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jdk/" style="font-size: 10px;">jdk</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/sublime/" style="font-size: 12.5px;">sublime</a> <a href="/tags/travis-ci/" style="font-size: 12.5px;">travis ci</a> <a href="/tags/ubuntu/" style="font-size: 12.5px;">ubuntu</a> <a href="/tags/持续集成/" style="font-size: 12.5px;">持续集成</a> <a href="/tags/服务器/" style="font-size: 12.5px;">服务器</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.ymming.com/">Ymming</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.lzkzhiliang.com/">执凉</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.netcan666.com/">Netcan</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://lyeec.me/">墨</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.anotherhome.net">DIYgod</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://wind.moe">稗田千秋</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/Home/H1/index.html">世平阜康</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://fevering.cn">Fevering</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weilai5432.github.io/">魏来</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">生命不息，折腾不止！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Waydrow</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/images/avatar.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Waydrow</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不知名的程序猿+Web前端技术宅</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">文章</a></li>
+		        
+					<li><a href="/tags">分类</a></li>
+		        
+					<li><a href="/categories/杂谈">杂谈</a></li>
+		        
+					<li><a href="/about">关于</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="facebook" target="_blank" href="https://www.facebook.com/waydrow" title="facebook">facebook</a>
+			        
+						<a class="github" target="_blank" href="https://github.com/Waydrow" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto:waydrow@163.com" title="mail">mail</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-ST3-LiveReload" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/16/ST3-LiveReload/" class="article-date">
+  	<time datetime="2015-08-16T08:10:40.000Z" itemprop="datePublished">2015-08-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sublime Text3 无法使用LiveReload插件的解决方法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web前端/">Web前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/技术漫谈/">技术漫谈</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <h2 id="问题更新"><a href="#问题更新" class="headerlink" title="问题更新"></a>问题更新</h2><p>最近电脑系统换为ubuntu后，发现原来这个问题的解决办法和windows中略有不同，及时记录下来</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>以前一直在用<code>sublime text2</code>, 有一款插件感觉非常好用，就是<code>LiveReload</code>，<br>在sublime中写完代码，按下ctrl+s保存后，浏览器自动刷新页面，可直接查看效果，<br>而不用切换到浏览器中再按F5刷新。这对于做web开发的真心方便，最爽的莫过于双屏开发，这边写完代码，保存，那边直接查看效果。<br>然而，前段时间开始尝试<code>sublime text 3</code>, 没想到通过<code>package control</code>安装的<code>livereload</code>插件无法使用了，简直不能忍啊！！在网上搜索了好久，也看了国外的一些解答，总算找到了解决方法。<br><a id="more"></a></p>
+<h2 id="安装LiveReload"><a href="#安装LiveReload" class="headerlink" title="安装LiveReload"></a>安装LiveReload</h2><h3 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h3><p>1.在chrome浏览器中安装扩展插件LiveReload，安装完成后，可看到右上角出现livereload图标，<br>如下图所示，此时中心的圆点是空心的，代表还未开启<br><img src="/images/20150816/livereload-chrome.jpg" alt=""><br>2.进入chrome扩展程序页面，将livereload中的<code>允许访问文件网址</code>打上勾<br><img src="/images/20150816/livereload-chrome2.jpg" alt=""></p>
+<h3 id="sublime安装LiveReload"><a href="#sublime安装LiveReload" class="headerlink" title="sublime安装LiveReload"></a>sublime安装<code>LiveReload</code></h3><blockquote>
+<p>sublime text3的package control中的livereload插件存在bug, 不知道什么时候能够修复</p>
+</blockquote>
+<p><strong>windows</strong><br><a href="https://github.com/Grafikart/ST3-LiveReload" target="_blank" rel="external">https://github.com/Grafikart/ST3-LiveReload</a><br>可以从上面地址下载到可用的livereload，直接下载到本地或clone均可<br>你会得到一个插件包，将该文件夹重命名为<code>LiveReload</code>，然后将其手工放入<br>sublime text3的Packages目录中，此文件夹是隐藏文件夹，默认地址为<br><code>C:\Users\your_user_name\AppData\Roaming\Sublime Text 3\Packages</code><br>博主是用的<a href="http://www.voidtools.com/" target="_blank" rel="external">Everything</a>查找的，直接输入sublime package 关键字即可查找到。</p>
+<blockquote>
+<p>顺道在此打个广告，Everything是一款特别好用的windows平台下的搜索工具，比windows自带的搜索功能好用上千倍，附上下载地址，有需自取<br><a href="http://www.voidtools.com/downloads/" target="_blank" rel="external">http://www.voidtools.com/downloads/</a></p>
+</blockquote>
+<p><strong>Linux</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.config/sublime-text-3/Packages  </span><br><span class="line">rm -rf LiveReload  </span><br><span class="line">git clone https://github.com/Grafikart/ST3-LiveReload.git LiveReload</span><br></pre></td></tr></table></figure>
+<p>接下来，打开sublime text 3</p>
+<p><strong>windows</strong><br><code>preferences -&gt; Packge Settings -&gt; LiveReload -&gt; Settings - User</code><br><img src="/images/20150816/sublime-livereload.jpg" alt=""><br><strong>Linux</strong><br><code>preferences -&gt; Packge Settings -&gt; LiveReload -&gt; Settings - Default</code><br>输入以下内容保存即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;enabled_plugins&quot;: [</span><br><span class="line">        &quot;SimpleReloadPlugin&quot;,</span><br><span class="line">        &quot;SimpleRefresh&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>有很多教程是要每次打开sublime后，通过<code>package control</code>手动启用上述组件，这样也是可以的，但总归麻烦了一些，可以直接添加上述代码，使之默认加载。</p>
+</blockquote>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>例如，打开某个html文件，在chrome中打开，点击LiveReload图标，可以看到中心由空心圆点变为实心圆点，代表启动成功，这时返回sublime中，可以看到左下角出现LiveReload连接成功的提示<br><img src="/images/20150816/sublime-livereload2.jpg" alt=""><br>最后，开始享受敲代码的愉悦感吧！</p>
+<blockquote>
+<p>如有问题，欢迎留言或者发送邮件到<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x57;&#x61;&#x79;&#x64;&#114;&#x6f;&#119;&#64;&#x31;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;">&#x57;&#x61;&#x79;&#x64;&#114;&#x6f;&#119;&#64;&#x31;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/08/16/ST3-LiveReload/">Sublime Text3 无法使用LiveReload插件的解决方法</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Waydrow 的个人博客">Waydrow</a></p>
+        <p><span>发布时间:</span>2015年08月16日 - 16时10分</p>
+        <p><span>最后更新:</span>2016年03月28日 - 14时52分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/08/16/ST3-LiveReload/" title="Sublime Text3 无法使用LiveReload插件的解决方法">http://blog.waydrow.com/2015/08/16/ST3-LiveReload/</a>
+            <span class="copy-path" data-clipboard-text="http://blog.waydrow.com/2015/08/16/ST3-LiveReload/" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/11/10/bootstrap-ie/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          如何让bootstrap兼容ie8+
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/14/使用Hexo在Github上搭建你的博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用Hexo在Github上搭建你的博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ST3-LiveReload" data-title="Sublime Text3 无法使用LiveReload插件的解决方法" data-url="http://blog.waydrow.com/2015/08/16/ST3-LiveReload/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"waydrow"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		/*ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';*/
+		ds.src = "http://blog.waydrow.com/js/embed.js";
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Waydrow
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-66353260-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
