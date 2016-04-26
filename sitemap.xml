@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.waydrow.com/2016/04/26/php-regular/</loc>
+    
+    <lastmod>2016-04-26T07:57:51.084Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.waydrow.com/2016/03/28/hexo-to-csdn/</loc>
     
     <lastmod>2016-03-28T11:05:54.398Z</lastmod>
