@@ -740,8 +740,9 @@ li:hover {
   margin-right: 9px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  padding: 5px;
   display: block;
+  float: left !important;
+  padding: 5px;
 }
 #header .switch-part3 .switch-friends-link:hover {
   background: #88acdb;
@@ -761,6 +762,15 @@ li:hover {
 }
 #disqus_thread {
   padding: 0 40px;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+/*IE/7/6*/
 }
 .archives-wrap {
   position: relative;
