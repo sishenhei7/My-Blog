@@ -245,6 +245,68 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-activity-lifecycle" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/13/activity-lifecycle/" class="article-date">
+  	<time datetime="2016-02-13T14:04:15.000Z" itemprop="datePublished">2016-02-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/13/activity-lifecycle/">Android开发：Activity 生命周期详解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是Activity"><a href="#什么是Activity" class="headerlink" title="什么是Activity"></a>什么是Activity</h2><p>&emsp;Activity是Android SDK中<code>Activity</code>类的一个具体实例，负责管理用户与信息屏的交互。在一个应用程序中通常由多个Activity构成，在<code>Manifest.xml</code>中会指定一个主的Activity, 如下所示<br><code>&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</code><br>&emsp;当程序第一次运行时用户就会看这个Activity，这个Activity可以通过启动其他的Activity进行相关操作。当启动其他的Activity时这个当前的这个Activity将会停止，新的Activity将会压入栈中，同时获取用户焦点，这时就可在这个Activity上操作了。都知道栈是先进后出的原则，那么当用户按Back键时，当前的这个Activity销毁，前一个Activity重新恢复。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Activity/">Activity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/13/activity-lifecycle/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-android-environment" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -479,71 +541,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/01/26/progressBar/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-10years" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/26/10years/" class="article-date">
-  	<time datetime="2016-01-26T01:23:20.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/10years/">Teach Yourself Programming in Ten Years</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;前段时间在备战期末，不禁感慨自己大脑的知识接收效率，指数级增长……导致博客好久没有更新了，不过归根结底还是由于自己的惰性，今天趁此立个目标，每周至少保持一次更新。也算是对自己的激励吧！希望大家能够监督！！<br>  废话不多说，昨日晚上刷短乎，偶然看到一篇关于编程的文章: <strong>Teach Yourself Programming in Ten Years</strong>，很是不错，拿来跟大家分享。</p>
-<blockquote>
-<p>这可是<strong>轮子哥</strong>推荐过的哦</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/coding/">coding</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/杂谈/">杂谈</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/26/10years/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
