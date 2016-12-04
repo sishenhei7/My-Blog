@@ -21,17 +21,21 @@
     }
   </style>
   
-  <title>Category: Android | Waydrow&#39;s blog</title>
+  <title>MySQL5.6使用Notifier无法停止或重启服务 | Waydrow&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不知名的程序猿+Web前端技术宅">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Waydrow's blog">
-<meta property="og:url" content="http://blog.waydrow.com/categories/Android/index.html">
+  <meta name="description" content="前言以前用mysql的时候, 一直用的是WAMP集成开发环境, 前两天心血来潮, 打算自己配一下环境。Apache, php都没有什么问题, 很顺利的就装好了。但是到了Mysql这, 出了点小小的问题, 装好之后发现无法通过notifier工具停止服务, 提示the service MySQL56 was not found in the windows services。不甘心的我去window">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL5.6使用Notifier无法停止或重启服务">
+<meta property="og:url" content="http://blog.waydrow.com/2016/12/04/mysql-services/index.html">
 <meta property="og:site_name" content="Waydrow's blog">
-<meta property="og:description" content="不知名的程序猿+Web前端技术宅">
+<meta property="og:description" content="前言以前用mysql的时候, 一直用的是WAMP集成开发环境, 前两天心血来潮, 打算自己配一下环境。Apache, php都没有什么问题, 很顺利的就装好了。但是到了Mysql这, 出了点小小的问题, 装好之后发现无法通过notifier工具停止服务, 提示the service MySQL56 was not found in the windows services。不甘心的我去window">
+<meta property="og:image" content="http://7xqoa3.com1.z0.glb.clouddn.com/notifier.png">
+<meta property="og:image" content="http://7xqoa3.com1.z0.glb.clouddn.com/notifier2.png">
+<meta property="og:updated_time" content="2016-12-04T11:39:18.243Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Waydrow's blog">
-<meta name="twitter:description" content="不知名的程序猿+Web前端技术宅">
+<meta name="twitter:title" content="MySQL5.6使用Notifier无法停止或重启服务">
+<meta name="twitter:description" content="前言以前用mysql的时候, 一直用的是WAMP集成开发环境, 前两天心血来潮, 打算自己配一下环境。Apache, php都没有什么问题, 很顺利的就装好了。但是到了Mysql这, 出了点小小的问题, 装好之后发现无法通过notifier工具停止服务, 提示the service MySQL56 was not found in the windows services。不甘心的我去window">
+<meta name="twitter:image" content="http://7xqoa3.com1.z0.glb.clouddn.com/notifier.png">
   
     <link rel="alternative" href="/atom.xml" title="Waydrow&#39;s blog" type="application/atom+xml">
   
@@ -243,201 +247,120 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-mysql-services" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/12/04/mysql-services/" class="article-date">
+  	<time datetime="2016-12-04T11:21:26.000Z" itemprop="datePublished">2016-12-04</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL5.6使用Notifier无法停止或重启服务
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/后端/">后端</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/25/JSONObjectRequest-post-failed/" class="archive-article-date">
-  	<time datetime="2016-03-25T13:04:46.000Z" itemprop="datePublished">Mar 25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/25/JSONObjectRequest-post-failed/">Volley使用JsonObjectRequest发送Post请求失败</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>以前用mysql的时候, 一直用的是WAMP集成开发环境, 前两天心血来潮, 打算自己配一下环境。Apache, php都没有什么问题, 很顺利的就装好了。但是到了Mysql这, 出了点小小的问题, 装好之后发现无法通过<code>notifier</code>工具停止服务, 提示<code>the service MySQL56 was not found in the windows services</code>。不甘心的我去windows的services里找了下, 发现明明存在<code>MySQL56</code>的服务。一脸懵逼。。。</p>
+<a id="more"></a>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>今天找到了解决方案, 其实很简单</p>
+<h3 id="打开管理面板"><a href="#打开管理面板" class="headerlink" title="打开管理面板"></a>打开管理面板</h3><p>点击右下角的<code>notifier</code>, 选择<code>Actions</code> -&gt; <code>Manage Monitored Items...</code></p>
+<p><img src="http://7xqoa3.com1.z0.glb.clouddn.com/notifier.png" alt=""></p>
+<h3 id="删除当前服务"><a href="#删除当前服务" class="headerlink" title="删除当前服务"></a>删除当前服务</h3><p>选中当前服务, 点击右边的<code>Delete</code>即可<br><img src="http://7xqoa3.com1.z0.glb.clouddn.com/notifier2.png" alt=""></p>
+<h3 id="重新添加MySQL56服务"><a href="#重新添加MySQL56服务" class="headerlink" title="重新添加MySQL56服务"></a>重新添加<code>MySQL56</code>服务</h3><p>点击 <code>Add</code>-&gt;<code>Windows Services</code>, 在列表中找到<code>MySQL56</code>, 添加即可</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>这时候, 再次停止或重启服务, 就会发现没有问题了</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>其实这也不算是什么大的问题, 就是做为一个有强迫症的人来说, 一直看着这个服务运行停不下来, 简单没有办法忍受…</p>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Http/">Http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JsonObjectRequest/">JsonObjectRequest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Volley/">Volley</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/12/04/mysql-services/">MySQL5.6使用Notifier无法停止或重启服务</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Waydrow 的个人博客">Waydrow</a></p>
+        <p><span>发布时间:</span>2016年12月04日 - 19时21分</p>
+        <p><span>最后更新:</span>2016年12月04日 - 19时39分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/04/mysql-services/" title="MySQL5.6使用Notifier无法停止或重启服务">http://blog.waydrow.com/2016/12/04/mysql-services/</a>
+            <span class="copy-path" data-clipboard-text="http://blog.waydrow.com/2016/12/04/mysql-services/" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/15/Mid-autumn Festival/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">露从今夜白,月是故乡明</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/11/swipeRefreshLayout/" class="archive-article-date">
-  	<time datetime="2016-03-11T12:53:43.000Z" itemprop="datePublished">Mar 11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/11/swipeRefreshLayout/">Android SwipeRefreshLayout 下拉刷新组件的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ListView/">ListView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SwipeRefreshLayout/">SwipeRefreshLayout</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/10/Android常用控件/" class="archive-article-date">
-  	<time datetime="2016-03-10T13:47:18.000Z" itemprop="datePublished">Mar 10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/10/Android常用控件/">Android常用控件(下拉列表，日期时间选择器，多选单选框)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CheckBox/">CheckBox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DatePickerDialog/">DatePickerDialog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RadioButton/">RadioButton</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RadioGroup/">RadioGroup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spinner/">Spinner</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TimePickerDialog/">TimePickerDialog</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/03/log-info-android/" class="archive-article-date">
-  	<time datetime="2016-03-03T14:53:28.000Z" itemprop="datePublished">Mar 3</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/03/log-info-android/">Android日志系统</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="mysql-services" data-title="MySQL5.6使用Notifier无法停止或重启服务" data-url="http://blog.waydrow.com/2016/12/04/mysql-services/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"waydrow"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		/*ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';*/
+		ds.src = "http://blog.waydrow.com/js/embed.js";
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/02/13/activity-lifecycle/" class="archive-article-date">
-  	<time datetime="2016-02-13T14:04:15.000Z" itemprop="datePublished">Feb 13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/13/activity-lifecycle/">Android开发：Activity 生命周期详解</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Activity/">Activity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/categories/Android/page/2/">2</a><a class="extend next" rel="next" href="/categories/Android/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 </div>
       <footer id="footer">
@@ -464,10 +387,10 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false
 	}
 </script>
