@@ -21,17 +21,18 @@
     }
   </style>
   
-  <title>Waydrow&#39;s blog</title>
+  <title>c++输入隐藏密码的实现 | Waydrow&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不知名的程序猿+Web前端技术宅">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Waydrow's blog">
-<meta property="og:url" content="http://blog.waydrow.com/page/5/index.html">
+  <meta name="description" content="前言最近在用C++编写一个图书管理系统, 其中需要用户的登录, 原来没有想太多, 就用了普通的cin输入, 但是前两天组里的同学说, 要是输入密码的时候能将其隐藏就好了。以前做网站的时候, 有各种标签属性可以很方便的实现这个功能, 但是现在是控制台…不知道怎么搞了。最后百度谷歌后发现了一个很神奇的函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++输入隐藏密码的实现">
+<meta property="og:url" content="http://blog.waydrow.com/2016/12/10/c-hide-password/index.html">
 <meta property="og:site_name" content="Waydrow's blog">
-<meta property="og:description" content="不知名的程序猿+Web前端技术宅">
+<meta property="og:description" content="前言最近在用C++编写一个图书管理系统, 其中需要用户的登录, 原来没有想太多, 就用了普通的cin输入, 但是前两天组里的同学说, 要是输入密码的时候能将其隐藏就好了。以前做网站的时候, 有各种标签属性可以很方便的实现这个功能, 但是现在是控制台…不知道怎么搞了。最后百度谷歌后发现了一个很神奇的函数">
+<meta property="og:updated_time" content="2016-12-10T14:18:50.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Waydrow's blog">
-<meta name="twitter:description" content="不知名的程序猿+Web前端技术宅">
+<meta name="twitter:title" content="c++输入隐藏密码的实现">
+<meta name="twitter:description" content="前言最近在用C++编写一个图书管理系统, 其中需要用户的登录, 原来没有想太多, 就用了普通的cin输入, 但是前两天组里的同学说, 要是输入密码的时候能将其隐藏就好了。以前做网站的时候, 有各种标签属性可以很方便的实现这个功能, 但是现在是控制台…不知道怎么搞了。最后百度谷歌后发现了一个很神奇的函数">
   
     <link rel="alternative" href="/atom.xml" title="Waydrow&#39;s blog" type="application/atom+xml">
   
@@ -243,13 +244,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-myBlog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-c-hide-password" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/13/myBlog/" class="article-date">
-  	<time datetime="2015-11-13T13:00:13.000Z" itemprop="datePublished">2015-11-13</time>
+      <a href="/2016/12/10/c-hide-password/" class="article-date">
+  	<time datetime="2016-12-10T14:03:41.000Z" itemprop="datePublished">2016-12-10</time>
 </a>
     </div>
   
@@ -261,306 +260,101 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/13/myBlog/">我的博客日志——主题更新</a>
+    <h1 class="article-title" itemprop="name">
+      c++输入隐藏密码的实现
     </h1>
   
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2016-02-05-添加copyright-info信息"><a href="#2016-02-05-添加copyright-info信息" class="headerlink" title="2016-02-05 添加copyright info信息"></a><strong>2016-02-05</strong> 添加copyright info信息</h2><p>在每篇文章后加入版权信息<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/博客/">博客</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/13/myBlog/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-wampserver" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/10/wampserver/" class="article-date">
-  	<time datetime="2015-11-10T04:18:02.000Z" itemprop="datePublished">2015-11-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+      <div class="article-info article-info-post">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/10/wampserver/">Windows下WampServer初体验</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近初步涉及php及服务器的搭建，曾花了一个晚上搭建<code>Apache</code>, 由于没有基础，搞的头都大了最终也没成功…不过，在这里介绍一款软件<code>WampServer</code>,这款软件在安装的过程中就已经把Apache、MySQL、PHP继承好了，而且也做好了相应的配置,安装时直接下一步大法就好了，简直是小白的福音！<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WampServer/">WampServer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
 	</div>
 
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术漫谈/">技术漫谈</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/10/wampserver/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-bootstrap-ie" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/10/bootstrap-ie/" class="article-date">
-  	<time datetime="2015-11-10T02:26:43.000Z" itemprop="datePublished">2015-11-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/10/bootstrap-ie/">如何让bootstrap兼容ie8+</a>
-    </h1>
-  
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/编程/">编程</a>
+	</div>
 
-      </header>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>想必做前端开发的都应该听说过<code>Bootstrap</code>, 一款优秀的前端开发框架。前段时间博主做的一个项目便尝试着用了boostrap来搭建，确定非常快，而且响应式做的特别好，省去了许多麻烦。不过由于我用的是Bootstrap 3.0,结果发现在ie8下崩掉了，心塞啊！又翻出bootstrap官方API，细读之……这才明白由于bootstrap做响应式所用的栅格布局在ie8下不被支持，而且也不支持html5的新标签和css3的一些效果，如圆角、阴影、一些过渡效果等……(详情见下图) 翻了好多教程，总结出以下方法，与大家分享！<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boostrap/">Boostrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web前端/">Web前端</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Web前端/">Web前端</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/10/bootstrap-ie/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-ST3-LiveReload" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/16/ST3-LiveReload/" class="article-date">
-  	<time datetime="2015-08-16T08:10:40.000Z" itemprop="datePublished">2015-08-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/16/ST3-LiveReload/">Sublime Text3 无法使用LiveReload插件的解决方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="问题更新"><a href="#问题更新" class="headerlink" title="问题更新"></a>问题更新</h2><p>最近电脑系统换为ubuntu后，发现原来这个问题的解决办法和windows中略有不同，及时记录下来</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>以前一直在用<code>sublime text2</code>, 有一款插件感觉非常好用，就是<code>LiveReload</code>，<br>在sublime中写完代码，按下ctrl+s保存后，浏览器自动刷新页面，可直接查看效果，<br>而不用切换到浏览器中再按F5刷新。这对于做web开发的真心方便，最爽的莫过于双屏开发，这边写完代码，保存，那边直接查看效果。<br>然而，前段时间开始尝试<code>sublime text 3</code>, 没想到通过<code>package control</code>安装的<code>livereload</code>插件无法使用了，简直不能忍啊！！在网上搜索了好久，也看了国外的一些解答，总算找到了解决方法。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web前端/">Web前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
-	</div>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在用<code>C++</code>编写一个图书管理系统, 其中需要用户的登录, 原来没有想太多, 就用了普通的<code>cin</code>输入, 但是前两天组里的同学说, 要是输入密码的时候能将其隐藏就好了。以前做网站的时候, 有各种标签属性可以很方便的实现这个功能, 但是现在是控制台…不知道怎么搞了。最后百度谷歌后发现了一个很神奇的函数<br><a id="more"></a></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>简而言之, 就是使用<code>C++</code>的<code>getch()</code>函数, <strong>注意</strong>不是<code>getchar</code>, 这个函数可以使用户的输入不显示在屏幕上, 其包含在<code>conio.h</code>头文件中, 下面看代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">inputPassword</span><span class="params">(<span class="built_in">string</span> &amp;str, <span class="keyword">int</span> size)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> *password = <span class="keyword">new</span> <span class="keyword">char</span>[size]; <span class="comment">// 动态申请空间</span></span><br><span class="line">	<span class="keyword">while</span> ((c = getch()) != <span class="string">'\r'</span>) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (c == <span class="number">8</span>) &#123; <span class="comment">// 退格</span></span><br><span class="line">			<span class="keyword">if</span> (count == <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">putchar</span>(<span class="string">'\b'</span>); <span class="comment">// 回退一格</span></span><br><span class="line">			<span class="built_in">putchar</span>(<span class="string">' '</span>); <span class="comment">// 输出一个空格将原来的*隐藏</span></span><br><span class="line">			<span class="built_in">putchar</span>(<span class="string">'\b'</span>); <span class="comment">// 再回退一格等待输入</span></span><br><span class="line">			count--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (count == size - <span class="number">1</span>) &#123; <span class="comment">// 最大长度为size-1</span></span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> ((c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) || (c &gt;= <span class="string">'A'</span> &amp;&amp; c &lt;= <span class="string">'Z'</span>) || (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)) &#123;  <span class="comment">// 密码只可包含数字和字母</span></span><br><span class="line">			<span class="built_in">putchar</span>(<span class="string">'*'</span>);  <span class="comment">// 接收到一个字符后, 打印一个*</span></span><br><span class="line">			password[count] = c;</span><br><span class="line">			count++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	password[count] = <span class="string">'\0'</span>;</span><br><span class="line">	str = password;</span><br><span class="line">	<span class="keyword">delete</span>[] password; <span class="comment">// 释放空间</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为方便对其操作, 我使用了<code>string</code>, 其中需要进行<code>char*</code>和<code>string</code>的转换</p>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a href="https://github.com/Waydrow/Library" target="_blank" rel="external">https://github.com/Waydrow/Library</a></p>
 
       
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术漫谈/">技术漫谈</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/16/ST3-LiveReload/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/12/10/c-hide-password/">c++输入隐藏密码的实现</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Waydrow 的个人博客">Waydrow</a></p>
+        <p><span>发布时间:</span>2016年12月10日 - 22时03分</p>
+        <p><span>最后更新:</span>2016年12月10日 - 22时18分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/10/c-hide-password/" title="c++输入隐藏密码的实现">http://blog.waydrow.com/2016/12/10/c-hide-password/</a>
+            <span class="copy-path" data-clipboard-text="http://blog.waydrow.com/2016/12/10/c-hide-password/" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/04/mysql-services/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL5.6使用Notifier无法停止或重启服务</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
 
 
-
-
-
-  
-    <article id="post-使用Hexo在Github上搭建你的博客" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/14/使用Hexo在Github上搭建你的博客/" class="article-date">
-  	<time datetime="2015-08-14T08:53:00.000Z" itemprop="datePublished">2015-08-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/14/使用Hexo在Github上搭建你的博客/">使用Hexo在Github上搭建你的博客</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自从投身于互联网学习的怀抱中后，一直想搭建一个属于自己的个人博客。了解过WordPress<br>，不过因为不懂服务器的知识只得暂时作罢;也看过csdn、博客园等，方便是方便，不过主题样式无法个人定制，这对于美工出身的我简直无法忍受。听朋友说起hexo，并且能够部署在github上，甚是方便，照着教程，一步一步搭建了这个博客。在搭建博客过程中遇到了很多问题，写下这篇教程的原因就是希望能够给需要的人些许帮助。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/博客/">博客</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/14/使用Hexo在Github上搭建你的博客/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="c-hide-password" data-title="c++输入隐藏密码的实现" data-url="http://blog.waydrow.com/2016/12/10/c-hide-password/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"waydrow"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		/*ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';*/
+		ds.src = "http://blog.waydrow.com/js/embed.js";
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
-    </nav>
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -585,8 +379,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
