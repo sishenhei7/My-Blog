@@ -186,6 +186,8 @@
 			        
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://hubojing.github.io/">胡博靖</a>
 			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zcheng.ren">ZeeCoder</a>
+			        
 			        </div>
 				</section>
 				
@@ -319,7 +321,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"># 指定环境</span><br><span class="line">language: node_js</span><br><span class="line"></span><br><span class="line">node_js:</span><br><span class="line">- &apos;0.12&apos; #指定使用 node.js 最新的稳定版0.12</span><br><span class="line"></span><br><span class="line"># 指定分支</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">  - master #这个分支应当使用自己的 Dev repo</span><br><span class="line"></span><br><span class="line">before_install: </span><br><span class="line">#注意将xxxx内容修改为你之前获得的解密参数</span><br><span class="line">- openssl aes-256-cbc -K $encrypted_xxxxxxxxxx_key -iv $encrypted_xxxxxxxxxx_iv </span><br><span class="line">  -in id_rsa.enc -out ~/.ssh/id_rsa -d</span><br><span class="line">- chmod 600 ~/.ssh/id_rsa //修改目录权限</span><br><span class="line">- eval $(ssh-agent)//将密钥加入系统</span><br><span class="line">- ssh-add ~/.ssh/id_rsa</span><br><span class="line">- cp ssh_config ~/.ssh/config //修改 git 信息</span><br><span class="line">- git config --global user.name &quot;你的姓名&quot;</span><br><span class="line">- git config --global user.email 你的邮箱</span><br><span class="line"></span><br><span class="line"># 配置 Hexo</span><br><span class="line">install:</span><br><span class="line">- npm install hexo-cli -g</span><br><span class="line">- npm install</span><br><span class="line">- npm install hexo-generator-feed --save</span><br><span class="line">- npm install hexo-generator-sitemap --save</span><br><span class="line">- npm install hexo-deployer-git --save</span><br><span class="line"></span><br><span class="line"># 执行 Hexo 的编译操作</span><br><span class="line">script:</span><br><span class="line">- hexo clean</span><br><span class="line">- hexo g</span><br><span class="line">- hexo d</span><br></pre></td></tr></table></figure>
 <h2 id="Push-到-Dev-repo"><a href="#Push-到-Dev-repo" class="headerlink" title="Push 到 Dev repo"></a>Push 到 Dev repo</h2><p>将改动push到Dev repo上，在<a href="https://travis-ci.org" target="_blank" rel="external">https://travis-ci.org</a>页面可以查看构建状态，<br>如果成功的话就能在自己的 pages 上查看刚生成的博客了；如构建失败，Travis CI 会显示出哪步脚本导致了构建失败，本地源里修改它，然后再次 push 即可。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这样一来，我们以后写博客或者改配置，只需要push即可，Travis CI会帮助我们自动部署，是不是比较方便？<br>其实我感觉这样最大的好处重装系统之后不需要重新配置hexo环境了，直接clone到本地，就可以了。</p>
-<p>如有问题欢迎在下面留言<br>或者直接联系我：<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x57;&#x61;&#x79;&#x64;&#114;&#x6f;&#119;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#x6f;&#109;">&#x57;&#x61;&#x79;&#x64;&#114;&#x6f;&#119;&#x40;&#x31;&#54;&#51;&#46;&#x63;&#x6f;&#109;</a><br>我会在第一时间回复</p>
+<p>如有问题欢迎在下面留言<br>或者直接联系我：<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x57;&#x61;&#x79;&#100;&#114;&#111;&#x77;&#x40;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#109;">&#x57;&#x61;&#x79;&#100;&#114;&#111;&#x77;&#x40;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#109;</a><br>我会在第一时间回复</p>
 
       
     </div>
@@ -398,7 +400,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Waydrow
+    		&copy; 2017 Waydrow
         <a href="http://www.miitbeian.gov.cn/" target="_blank">鲁ICP备16019360号</a>
     	</div>
       	<div class="footer-right">

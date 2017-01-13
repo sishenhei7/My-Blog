@@ -179,6 +179,8 @@
 			        
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://hubojing.github.io/">胡博靖</a>
 			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zcheng.ren">ZeeCoder</a>
+			        
 			        </div>
 				</section>
 				
@@ -297,7 +299,7 @@
 <p>然后在自己代码中发送POST请求时，样例如下: </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());</span><br><span class="line"></span><br><span class="line">	HashMap&lt;String, String&gt; hashMap = <span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line">	hashMap.put(<span class="string">"username"</span>,num);</span><br><span class="line">	hashMap.put(<span class="string">"password"</span>,password);</span><br><span class="line"></span><br><span class="line">	CustomRequest jsonObjectRequest = <span class="keyword">new</span> CustomRequest(Request.Method.POST, </span><br><span class="line">		url, hashMap, <span class="keyword">new</span> Response.Listener&lt;JSONObject&gt;() &#123;</span><br><span class="line">	    <span class="meta">@Override</span></span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(JSONObject jsonObject)</span> </span>&#123;</span><br><span class="line">	        Log.d(<span class="string">"TagJson"</span>,jsonObject.toString());</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;, <span class="keyword">new</span> Response.ErrorListener() &#123;</span><br><span class="line">	    <span class="meta">@Override</span></span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onErrorResponse</span><span class="params">(VolleyError volleyError)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;);</span><br><span class="line">requestQueue.add(jsonObjectRequest);</span><br></pre></td></tr></table></figure>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>终于解决了，，普天同庆，顿时觉得整个世界都变好了。。<br>不过话说回来，仔细想一下，这个问题产生的原因可能不是本身代码的问题。<br>我的第二个方案代码是Volley官方资料上的使用方法，按理说不应该有问题。那么既然客户端这边没有问题，只能是服务器端的事了。猜想可能是由于服务器端不支持响应json格式的请求，才出现了请求失败的问题。不过到底是不是这样还有待考量。准备有空了试一下，在服务器端做下处理。  </p>
-<p>如有问题欢迎在正文评论留言，也可直接联系我。<br>邮箱: <a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#119;&#97;&#121;&#x64;&#x72;&#x6f;&#x77;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#x6f;&#x6d;">&#119;&#97;&#121;&#x64;&#x72;&#x6f;&#x77;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<p>如有问题欢迎在正文评论留言，也可直接联系我。<br>邮箱: <a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x77;&#97;&#121;&#x64;&#114;&#111;&#x77;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#111;&#x6d;">&#x77;&#97;&#121;&#x64;&#114;&#111;&#x77;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#111;&#x6d;</a></p>
 
       
     </div>
@@ -376,7 +378,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Waydrow
+    		&copy; 2017 Waydrow
         <a href="http://www.miitbeian.gov.cn/" target="_blank">鲁ICP备16019360号</a>
     	</div>
       	<div class="footer-right">
